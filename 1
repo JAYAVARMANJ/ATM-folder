@@ -1,0 +1,62 @@
+package CD_ATM;
+
+import java.text.DateFormat.Field;
+
+class customerDetails extends MAIN{
+	int accountnumber;
+	String accountname;
+	int SPIN;
+	int Balance;
+	public customerDetails(int accountnumber, String accountname, int SPIN, int Balance) {
+		super();
+		this.accountnumber = accountnumber;
+		this.accountname = accountname;
+		this.SPIN = SPIN;
+		this.Balance = Balance;
+	}
+	public int getaccountnumber() {
+		return accountnumber;
+	}
+	public void setaccountnumber(int accountnumber) {
+		this.accountnumber = accountnumber;
+	}
+	public String getaccountname() {
+		return accountname;
+	}
+	public void setaccountname(String accountname) {
+		this.accountname = accountname;
+	}
+	public int getSPIN() {
+		return SPIN;
+	}
+	public void setSPIN(int SPIN) {
+		this.SPIN = SPIN;
+	}
+	public int getBalance() {
+		return Balance;
+	}
+	public void setBalance(int Balance) {
+		this.Balance = Balance;
+	}
+	public void updatebalaance(int amt) {
+		Balance-=amt;
+		return;
+	}
+	void customercashupdate(customerDetails obj,int amt,int _2000count,int _500count,int _100count) {
+		if(amt<=obj.Balance) {
+    		if(a12.update_withdrawl(amt,_2000count,_500count,_100count)) {
+    		  obj.updatebalaance(amt);
+    		} 
+    		else {
+    			System.out.println("Sorry Atm Balance is Low");
+    		}
+    	}
+    	else {
+    		System.out.println("Sorry Your Account Balance is Low");
+    	}
+		return;
+	}
+	public String toString() {
+		return  accountnumber + accountname + SPIN + Balance;
+	}	
+}
